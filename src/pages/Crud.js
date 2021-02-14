@@ -77,25 +77,12 @@ export default class Crud extends Component {
     });
   };
 
-  hapusData = (id) => {
-    const makananBaru = this.state.makanans
-      .filter((data) => data.id !== id)
-      .map((filterData) => {
-        return filterData;
-      });
-    this.setState({ makanans: makananBaru });
-  };
-
   render() {
     return (
       <div>
         <NavbarComponent />
         <div className="container mt-4">
-          <Tabel
-            makanans={this.state.makanans}
-            editData={this.editData}
-            hapusData={this.hapusData}
-          />
+          <Tabel makanans={this.state.makanans} editData={this.editData} />
           <Formulir
             {...this.state}
             handleChange={this.handleChange}

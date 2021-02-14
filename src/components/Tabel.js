@@ -29,12 +29,6 @@ const Tabel = ({ makanans, editData, hapusData }) => {
                   >
                     Edit
                   </button>
-                  <button
-                    className="btn btn-danger ml-3"
-                    onClick={() => hapusData(data.id)}
-                  >
-                    Hapus
-                  </button>
                 </td>
               </tr>
             );
