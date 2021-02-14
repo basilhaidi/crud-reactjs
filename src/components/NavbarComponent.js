@@ -11,7 +11,7 @@ import {
 const NavbarComponent = () => {
   return (
     <div>
-      <Navbar bg="light" expand="lg">
+      <Navbar bg="dark" variant="dark" expand="lg">
         <Navbar.Brand href="#home">CRUD REACT JS</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -32,7 +32,7 @@ const NavbarComponent = () => {
           </Nav>
           <Form inline>
             <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-            <Button variant="outline-success">Search</Button>
+            <Button variant="outline-light">Search</Button>
           </Form>
         </Navbar.Collapse>
       </Navbar>
