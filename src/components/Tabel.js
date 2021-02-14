@@ -1,7 +1,7 @@
 import React from "react";
 import { Table } from "react-bootstrap";
 
-const Tabel = ({ makanans }) => {
+const Tabel = () => {
   return (
     <div>
       <Table striped bordered hover>
@@ -15,17 +15,13 @@ const Tabel = ({ makanans }) => {
           </tr>
         </thead>
         <tbody>
-          {makanans.map((data, index) => {
-            return (
-              <tr key={index}>
-                <td>{index + 1}</td>
-                <td>{data.nama}</td>
-                <td>{data.deskripsi}</td>
-                <td>Rp. {data.harga}</td>
-                <td></td>
-              </tr>
-            );
-          })}
+          <tr>
+            <td>1</td>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+            <td></td>
+          </tr>
         </tbody>
       </Table>
     </div>
