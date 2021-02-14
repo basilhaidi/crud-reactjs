@@ -1,7 +1,7 @@
 import React from "react";
 import { Table } from "react-bootstrap";
 
-const Tabel = ({ makanans, editData, hapusData }) => {
+const Tabel = ({ makanans }) => {
   return (
     <div>
       <Table striped bordered hover>
@@ -22,14 +22,7 @@ const Tabel = ({ makanans, editData, hapusData }) => {
                 <td>{data.nama}</td>
                 <td>{data.deskripsi}</td>
                 <td>Rp. {data.harga}</td>
-                <td>
-                  <button
-                    className="btn btn-warning"
-                    onClick={() => editData(data.id)}
-                  >
-                    Edit
-                  </button>
-                </td>
+                <td></td>
               </tr>
             );
           })}

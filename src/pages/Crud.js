@@ -25,36 +25,18 @@ export default class Crud extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    if (this.state.id === "") {
-      this.setState({
-        makanans: [
-          ...this.state.makanans,
-          {
-            id: this.state.makanans.length + 1,
-            nama: this.state.nama,
-            deskripsi: this.state.deskripsi,
-            harga: this.state.harga,
-          },
-        ],
-      });
-    } else {
-      const makananYangSelainDiPilih = this.state.makanans
-        .filter((data) => data.id !== this.state.id)
-        .map((filterData) => {
-          return filterData;
-        });
-      this.setState({
-        makanans: [
-          ...makananYangSelainDiPilih,
-          {
-            id: this.state.makanans.length + 1,
-            nama: this.state.nama,
-            deskripsi: this.state.deskripsi,
-            harga: this.state.harga,
-          },
-        ],
-      });
-    }
+
+    this.setState({
+      makanans: [
+        ...this.state.makanans,
+        {
+          id: this.state.makanans.length + 1,
+          nama: this.state.nama,
+          deskripsi: this.state.deskripsi,
+          harga: this.state.harga,
+        },
+      ],
+    });
     this.setState({
       nama: "",
       deskripsi: "",
@@ -63,26 +45,12 @@ export default class Crud extends Component {
     });
   };
 
-  editData = (id) => {
-    const makananYangDiPilih = this.state.makanans
-      .filter((data) => data.id === id)
-      .map((filterData) => {
-        return filterData;
-      });
-    this.setState({
-      nama: makananYangDiPilih[0].nama,
-      deskripsi: makananYangDiPilih[0].deskripsi,
-      harga: makananYangDiPilih[0].harga,
-      id: makananYangDiPilih[0].id,
-    });
-  };
-
   render() {
     return (
       <div>
         <NavbarComponent />
         <div className="container mt-4">
-          <Tabel makanans={this.state.makanans} editData={this.editData} />
+          <Tabel makanans={this.state.makanans} />
           <Formulir
             {...this.state}
             handleChange={this.handleChange}
